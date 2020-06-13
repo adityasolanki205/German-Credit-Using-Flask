@@ -97,7 +97,7 @@ Below are the steps to setup the enviroment and run the codes:
    GridSearchCV(clf, parameters, scoring = scorer).fit(X_train, y_train).best_estimator_
 ```
 
-6. **Conclusion**: Atlast we will conclude with what we found out. 
+6. **Conclusion**: Atlast we will conclude about everything we found out.
 
 
 ## How to use?
