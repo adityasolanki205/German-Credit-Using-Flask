@@ -87,55 +87,29 @@ Below are the steps to setup the enviroment and run the codes:
     SVC_pred  = SVC(kernel = 'linear',probability = True).fit(X_train, y_train).predict(X_test)
 ```
 
-5. **Model Evaluation**: After selecting top 2 models we will try to evaluate which one is better on the given model.
+5. **Model Evaluation**: After selecting top 2 models we will try to evaluate which one is better on the given model. Also as per the given problem we will find Fbeta score.
 
 ```python
-    
+   # First we will try to find the ROC curve for both the models
+   roc_curve(y_test, lr_probs, pos_label=2)
+   
+   # Then we will try to the Best Classifier using Grid Search CV
+   GridSearchCV(clf, parameters, scoring = scorer).fit(X_train, y_train).best_estimator_
 ```
 
-## Tests
+6. **Conclusion**: Atlast we will conclude with what we found out. 
+
+
+## How to use?
 To test the code we need to do the following:
 
-    1. Copy the photo to be tested in 'Test' subfolder of 'Data' folder. 
-    Here I have used a photo of Elton John and Madonna
-![](data/test/singers.jpg)
+    1. Copy the german.data in the current folder
     
-    2. Goto the 'Predict face in a group' folder.
+    2. Open the 'German credit.ipynb'
     
-    3. Open the 'Predict from a group of faces.ipynb'
+    3. Run all the cells
     
-    4. Goto filename variable and provide the path to your photo. Atlast run the complete code. 
-    The recognised faces would have been highlighted and a photo would be saved by the name 'Highlighted.jpg'
-![](final.jpg)
-
-**Note**: The boundary boxes are color coded:
-
-    1. Aditya Solanki  : Yellow
-    2. Ben Affleck      : Blue   
-    3. Elton John      : Green
-    4. Jerry Seinfield : Red
-    5. Madonna         : Aqua
-    6. Mindy Kaling    : White
-    
-## How to use?
-To run the complete code, follow the process below:
-
-    1. Create Data Folder. 
-    
-    2. Create Sub folders as Training and Validation Dataset
-    
-    3. Create all the celebrity folders with all the required photos in them. 
-    
-    4. Run the Train and Test Data.ipynb file under Training Data Creation folder
-    
-    5. Save the output as numpy arrays
-    
-    6. Run the Face embedding using FaceNet.ipynb under the same folder name. This will create training data for SVM model
-    
-    7. Run the Predict from a group of faces.ipynb to recognise a familiar face
 
 ## Credits
-1. David Sandberg's facenet repo: [https://github.com/davidsandberg/facenet](https://github.com/davidsandberg/facenet)
-2. Tim Esler's Git repo:[https://github.com/timesler/facenet-pytorch](https://github.com/timesler/facenet-pytorch)
-3. Akash Nimare's README.md: https://gist.github.com/akashnimare/7b065c12d9750578de8e705fb4771d2f#file-readme-md
-4. [Machine learning mastery](https://machinelearningmastery.com/how-to-develop-a-face-recognition-system-using-facenet-in-keras-and-an-svm-classifier/)
+1. Akash Nimare's [README.md](https://gist.github.com/akashnimare/7b065c12d9750578de8e705fb4771d2f#file-readme-md)
+2. [Machine Learning Mastery](https://machinelearningmastery.com/imbalanced-classification-of-good-and-bad-credit/)
