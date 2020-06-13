@@ -1,12 +1,12 @@
-# Supervised Learning for German Credit Data
+# Supervised Learning on German Credit Data
 
-This is a **Supervised Learning Project for German Credit Data**. In this repository a complete process of Supervised Learning is explained. Here are the steps followed to perform this analysis :
+This is a **Supervised Learning Project on German Credit Data**. In this repository a complete process of Supervised Learning is explained. Here are the steps followed to perform this analysis :
 
-1. **Data Loading
+1. **Data Loading**
 2. **Data Exploration**
 3. **Data Preprocessing**
 4. **Model Selection**
-5. **Model Selection**
+5. **Model Evaluation**
 6. **Conclusion**
 
 
@@ -68,25 +68,29 @@ Below are the steps to setup the enviroment and run the codes:
     customers[numeric_columns].apply(lambda x: np.log(x + 1))
     
     # Min Max scaling to normalize the data
-    customers_scaled_log_transformed[numeric_columns] = scaler.fit_transform(customers_scaled_log_transformed[numeric_columns])
+    customers_log_transformed[numeric_columns] = scaler.fit_transform(customers_log_transformed[numeric_columns])
     
-    #
+    # One Hot Encoding for the Data becomes machine readable
+    customers_final = pd.get_dummies(customers_log_transformed)
 ```
 
-5. **Predict the Face**: After the training of SVM model we will predict the face over test dataset.
+4. **Model Selection**: Now we will train 3 different types of Models and see which one is preforming better.
 
 ```python
-    # Preprocessing of the test photos have to be done like we did for Train and Validation photos
-    image = np.asarray(image.convert('RGB'))
+    # First is Random Forest Algorithm
+    Randon_forest_pred  = RandomForestClassifier().fit(X_train, y_train).predict(X_test)
     
-    # Now extract the face
-    faces = MTCNN.detect_faces(image)
+    # Second is Logistic Regression Algorithm
+    Logistic_regression_pred   = LogisticRegression().fit(X_train, y_train).predict(X_test)
     
-    # Extract embeddings
-    embeddings = model.predict(samples)
+    # Third is Support Vector Machine
+    SVC_pred  = SVC(kernel = 'linear',probability = True).fit(X_train, y_train).predict(X_test)
+```
+
+5. **Model Evaluation**: After selecting top 2 models we will try to evaluate which one is better on the given model.
+
+```python
     
-    # At last we will predict the face embeddings
-    SVM_model.predict(X_test)
 ```
 
 ## Tests
