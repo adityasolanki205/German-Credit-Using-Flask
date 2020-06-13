@@ -109,6 +109,18 @@ To test the code we need to do the following:
     
     3. Run all the cells
     
+## Repository Content
+
+    1. German Credit.ipynb
+
+    2. German Credit.html
+    
+    3. german.data    
+    
+    4. german.data-numeric
+    
+    5. german.doc
+    
 
 ## Credits
 1. Akash Nimare's [README.md](https://gist.github.com/akashnimare/7b065c12d9750578de8e705fb4771d2f#file-readme-md)
