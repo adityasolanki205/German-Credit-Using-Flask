@@ -1,4 +1,4 @@
-# Supervised Learning on German Credit Data
+# Deep Learning on German Credit Data
 
 This is a **Supervised Learning Project on German Credit Data**.In this repository we will just implement this application using Flask Architecture to run it on Google Cloud. The complete process to Train and test is present [here](https://github.com/adityasolanki205/German-Credit).This model is trained to detect if the transaction is Fraud or not. In this repository a complete process of Supervised Learning is explained. This Repository is divided into 2 parts:
 
