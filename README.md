@@ -70,7 +70,7 @@ create a firewall rule to let port 5000 access Compute instance. To do that go t
 
 ```bash
     # Goto the Flask Folder
-    cd Face-recognition-on-flask
+    cd German-Credit-Using-Flask
     
     # Installing all the dependencies
     pip install -r requirements.txt
@@ -85,18 +85,17 @@ create a firewall rule to let port 5000 access Compute instance. To do that go t
 ```python
     import requests
     import json
-    import cv2
-    import PIL
-    from PIL import Image , ImageDraw, ImageFont
 
+    url = "http://localhost:5000/predict"
+    headers={"content-type": "application/json"}
 
-    url = "http://<Your IP address>:5000/predict"
-    headers = {"content-type": "image/jpg"}
-    filename = 'images/singers.jpg'
+    # send HTTP request to the server
+    response = requests.post(url, data=open('X_test_json.json', 'rb'), headers=headers)
+    predictions = response.json()
 ```
 ![](images/request.jpg)
 
-6. **See the magic happen**: Run Request.py file and see Face recognition happening on Google Cloud. This will save a final.jpg file as an output image where all know faces will be boxed.
+6. **See the magic happen**: Run Request.py file and see detected labels for each request happening on Google Cloud. The output received will be in the form of Json which could be used in any form later.
 
 
 
