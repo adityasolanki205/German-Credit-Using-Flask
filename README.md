@@ -86,7 +86,7 @@ create a firewall rule to let port 5000 access Compute instance. To do that go t
     import requests
     import json
 
-    url = "http://localhost:5000/predict"
+    url = "http://<External IP address>:5000/predict"
     headers={"content-type": "application/json"}
 
     # send HTTP request to the server
