@@ -80,7 +80,7 @@ create a firewall rule to let port 5000 access Compute instance. To do that go t
 ```
 ![](images/application.jpg)
 
-6. **Creating a POST request from Local**: After this we will create a POST request from the local. To do that we will just run request.py from local. There is one thing that has to be changed in the request.py file i.e. the IP address of the instance. Copy the external IP of the instance from Google cloud Console and paste in the request.py file
+6. **Creating a POST request from Local**: After this we will create a POST request from the local. To do that we will just run request.py from local. There is one thing that has to be changed in the request.py file i.e. the IP address of the instance. Copy the external IP of the instance from Google cloud Console and paste in the request.py file. The X_test_json file was already created in [here](https://github.com/adityasolanki205/German-Credit-Using-Flask/blob/master/German%20Credit-TensorFlow.ipynb)
 
 ```python
     import requests
@@ -90,7 +90,7 @@ create a firewall rule to let port 5000 access Compute instance. To do that go t
     headers={"content-type": "application/json"}
 
     # send HTTP request to the server
-    response = requests.post(url, data=open('X_test_json.json', 'rb'), headers=headers)
+    response = requests.post(url, data=open('json/X_test_json.json', 'rb'), headers=headers)
     predictions = response.json()
 ```
 ![](images/request.jpg)
