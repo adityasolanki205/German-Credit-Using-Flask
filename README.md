@@ -34,7 +34,7 @@ Below are the steps to setup the enviroment and run the codes:
 
 1. **Cloud account Setup**: First we will have to setup free google cloud account which can be done [here](https://cloud.google.com/free). 
 
-2. **Creating a Google Compute instance**: Now we have to create a Compute Engine Instance to deploy the app. To do that we will use **n1-standard-8** as it has larger processing power. For Boot Disk we will select **Ubuntu 18.04 LTS**. Also tick on the Allow Http traffic label to send/receive requests. At last create the instance.
+2. **Creating a Google Compute instance**: Now we have to create a Compute Engine Instance to deploy the app. To do that we will use **n1-standard-8** as it has larger processing power. For Boot Disk we will select **Ubuntu 18.04 LTS**. Also tick on the Allow Http traffic label to send/receive requests. At last click on create button.
 
 ![](images/compute_instance.gif)
 
@@ -95,25 +95,23 @@ create a firewall rule to let port 5000 access Compute instance. To do that go t
 ```
 ![](images/request.jpg)
 
-6. **See the magic happen**: Run Request.py file and see detected labels for each request happening on Google Cloud. The output received will be in the form of Json which could be used in any form later.
+6. **See the magic happen**: Run Request.py file and see detected labels for each request recieved backfrom Google Cloud. The output received will be in the form of Json which could be used in anywhere .
 
 
 
 ## Repository Content
 
-    1. German Credit.ipynb
+    1. German Credit-Tensorflow.ipynb
 
-    2. German Credit.html
+    2. app.py
     
-    3. German Credit-Tensorflow.ipynb
-
-    2. German Credit-Tensorflow.html
+    3. german_credit.h5    
     
-    3. german.data    
+    4. request.py
     
-    4. german.data-numeric
+    5. german_credit.h5
     
-    5. german.doc
+    6. requirements.txt
     
 
 ## Credits
