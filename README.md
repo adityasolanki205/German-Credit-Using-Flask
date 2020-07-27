@@ -109,7 +109,7 @@ create a firewall rule to let port 5000 access Compute instance. To do that go t
     
     4. request.py
     
-    5. german_credit.h5
+    5. german_credit.py
     
     6. requirements.txt
     
