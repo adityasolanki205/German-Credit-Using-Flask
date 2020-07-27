@@ -95,7 +95,7 @@ create a firewall rule to let port 5000 access Compute instance. To do that go t
 ```
 ![](images/request.jpg)
 
-6. **See the magic happen**: Run Request.py file and see detected labels for each request recieved backfrom Google Cloud. The output received will be in the form of Json which could be used in anywhere .
+6. **See the magic happen**: Run Request.py file and see detected labels for each request received backfrom Google Cloud. The output received will be in the form of Json which could be used in anywhere .
 
 
 
